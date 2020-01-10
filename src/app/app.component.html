@@ -3,9 +3,13 @@
 <h5 class="input-label">Retrieve Cookie Data</h5>
 <input type="text" class="form-control" placeholder="Key" [(ngModel)]="getKey">
 
-<button class="btn btn-primary" id="getButton" (click)="getTheValue()">Get Value</button>
+<button class="btn btn-primary" id="get-button" (click)="getTheValue(getKey)">Get Value</button>
+
+<h4 id="shown-value" *ngIf="show">{{getValue}}</h4>
 
 <h5 class="input-label">Set Cookie Data</h5>
-<input type="text" class="form-control" placeholder="Key">
+<input type="text" class="form-control" placeholder="Key" [(ngModel)]="setKey">
 
-<input type="text" class="form-control" placeholder="Value">
+<input type="text" class="form-control" placeholder="Value" [(ngModel)]="setValue">
+
+<button class="btn btn-primary" (click)="setTheValue(setKey, setValue)">Set Value</button>

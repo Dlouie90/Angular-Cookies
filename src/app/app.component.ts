@@ -7,10 +7,13 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  cookieValue: string = '';
+  getKey: string = '';
+  getValue: string = '';
+  setKey: string = '';
+  setValue: string = '';
+  show: boolean = false;
   title = 'Angular-Cookies';
-  getKey = '';
-  getValue = '';
-  cookieValue = '';
 
   constructor(private cookieService: CookieService) {
   }
@@ -20,14 +23,17 @@ export class AppComponent implements OnInit {
     this.cookieValue = this.cookieService.get('Test');
   }
 
-  getTheValue(): void {
-    this.cookieValue = this.cookieService.get(this.getValue);
+  getTheValue(key: string): void {
+    this.getValue = this.cookieService.get(key);
+    this.showValue();
   }
 
-
+  setTheValue(key: string, value: string): void {
+    this.cookieService.set(key, value);
+  }
 
   showValue(): void {
-    this.cookieValue
+    this.show = true;
   }
 
 }

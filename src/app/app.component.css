@@ -1,10 +1,14 @@
-#getButton {
+#get-button {
     margin-bottom: 1em;
 }
 
 #heading {
     text-align: center;
     margin-top: 1em;
+}
+
+#shown-value {
+    text-align: center;
 }
 
 .btn {
