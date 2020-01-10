@@ -1,0 +1,21 @@
+#getButton {
+    margin-bottom: 1em;
+}
+
+#heading {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.btn {
+    margin-left: 1em;
+}
+
+.form-control {
+    width: 40em;
+    margin: 1em;
+}
+
+.input-label {
+    margin-left: 1em;
+}
