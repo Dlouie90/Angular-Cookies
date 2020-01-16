@@ -8,9 +8,9 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AppComponent implements OnInit {
   expireNumber: number = undefined;
-  getKey: string = '';
+  getName: string = '';
   getValue: string = '';
-  setKey: string = '';
+  setName: string = '';
   setValue: string = '';
   show: boolean = false;
   title = 'Angular-Cookies';
@@ -18,22 +18,28 @@ export class AppComponent implements OnInit {
   constructor(private cookieService: CookieService) {
   }
 
-  createCustomCookie(key: string, value: string, expires?: number): void {
-    this.cookieService.set(key, value, expires);
+  createCustomCookie(name: string, value: string, expires?: number): void {
+    this.cookieService.set(name, value, expires);
+  }
+
+  deleteCookie(name: string) {
+    this.cookieService.delete(name);
+
   }
 
   ngOnInit(): void {
     this.cookieService.set('Test', 'Hello World!', 10000, undefined, undefined, undefined, 'Strict');
   }
 
-  getTheValue(key: string): void {
-    this.getValue = this.cookieService.get(key);
+  getTheValue(name: string): void {
+    this.getValue = this.cookieService.get(name);
+    this.getName = '';
     this.showValue();
   }
 
-  setTheValue(key: string, value: string, expires?: number): void {
-    this.cookieService.set(key, value, expires, undefined, undefined, undefined, 'Strict');
-    this.setKey = '';
+  setTheValue(name: string, value: string, expires?: number): void {
+    this.cookieService.set(name, value, expires, undefined, undefined, undefined, 'Strict');
+    this.setName = '';
     this.setValue = '';
     this.expireNumber = undefined;
   }

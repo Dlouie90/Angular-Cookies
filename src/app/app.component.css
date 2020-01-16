@@ -5,16 +5,17 @@
     padding-top: 1em;
 }
 
-#get-button {
-    margin-bottom: 1em;
-}
-
 #heading {
     text-align: center;
     margin-top: 1em;
 }
 
+#set-card {
+    margin-bottom: 2em;
+}
+
 #shown-value {
+    margin-top: 1em;
     text-align: center;
 }
 
@@ -23,7 +24,9 @@
 }
 
 .card {
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
     width: 50em;
     border-radius: 10px;
 }

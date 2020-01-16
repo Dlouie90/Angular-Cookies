@@ -3,25 +3,39 @@
 
 <div class="card">
     <div class="card-header">
-        <h5 class="input-label">Retrieve Cookie Data</h5>
+        <h5 class="input-label">Retrieve Cookie Value</h5>
     </div>
     <div class="card-body">
-        <input type="text" class="form-control" placeholder="Key" [(ngModel)]="getKey">
-        <button class="btn btn-primary" id="get-button" (click)="getTheValue(getKey)">Show Value</button>
+        <input type="text" class="form-control" placeholder="Name" [(ngModel)]="getName">
+        <button class="btn btn-info" (click)="getTheValue(getName)">Show Value</button>
     </div>
 </div>
 
-<h4 id="shown-value" *ngIf="show">{{getValue}}</h4>
-<div class="card">
+<h4 id="shown-value" *ngIf="show">{{getValue.length > 0 ?  getValue : 'No Value'}}</h4>
+<div class="card" id="set-card">
     <div class="card-header">
-        <h5 class="input-label">Set Cookie Data</h5>
+        <h5 class="input-label">Create Cookie</h5>
     </div>
     <div class="card-body">
         <div class="card-text">
-            <input type="text" class="form-control" placeholder="Key" [(ngModel)]="setKey">
+            <input type="text" class="form-control" placeholder="Name" [(ngModel)]="setName">
             <input type="text" class="form-control" placeholder="Value" [(ngModel)]="setValue">
             <input type="number" class="form-control" placeholder="Expiration" [(ngModel)]="expireNumber">
-            <button class="btn btn-primary" (click)="setTheValue(setKey, setValue, expireNumber)">Set Value</button>
+            <button class="btn btn-success" (click)="setTheValue(setName, setValue, expireNumber)">Set Value</button>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h5 class="input-label">
+            Delete Cookie
+        </h5>
+    </div>
+    <div class="card-body">
+        <div class="card=text">
+            <input type="text" class="form-control" placeholder="Name" [(ngModel)]="deleteName">
+            <button class="btn btn-danger" (click)="deleteCookie(deleteName)">Delete Cookie</button>
         </div>
     </div>
 </div>
