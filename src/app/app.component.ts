@@ -7,7 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  cookieValue: string = '';
+  expireNumber: number = undefined;
   getKey: string = '';
   getValue: string = '';
   setKey: string = '';
@@ -18,9 +18,12 @@ export class AppComponent implements OnInit {
   constructor(private cookieService: CookieService) {
   }
 
+  createCustomCookie(key: string, value: string, expires?: number): void {
+    this.cookieService.set(key, value, expires);
+  }
+
   ngOnInit(): void {
-    this.cookieService.set('Test', 'Hello World!');
-    this.cookieValue = this.cookieService.get('Test');
+    this.cookieService.set('Test', 'Hello World!', 10000, undefined, undefined, undefined, 'Strict');
   }
 
   getTheValue(key: string): void {
@@ -28,8 +31,11 @@ export class AppComponent implements OnInit {
     this.showValue();
   }
 
-  setTheValue(key: string, value: string): void {
-    this.cookieService.set(key, value);
+  setTheValue(key: string, value: string, expires?: number): void {
+    this.cookieService.set(key, value, expires, undefined, undefined, undefined, 'Strict');
+    this.setKey = '';
+    this.setValue = '';
+    this.expireNumber = undefined;
   }
 
   showValue(): void {

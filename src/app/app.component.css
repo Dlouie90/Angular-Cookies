@@ -1,3 +1,10 @@
+#cookie {
+    height: 15em;
+    display: block;
+    margin: auto;
+    padding-top: 1em;
+}
+
 #get-button {
     margin-bottom: 1em;
 }
@@ -15,6 +22,12 @@
     margin-left: 1em;
 }
 
+.card {
+    margin: auto;
+    width: 50em;
+    border-radius: 10px;
+}
+
 .form-control {
     width: 40em;
     margin: 1em;
@@ -22,4 +35,5 @@
 
 .input-label {
     margin-left: 1em;
+    margin-bottom: 0;
 }
